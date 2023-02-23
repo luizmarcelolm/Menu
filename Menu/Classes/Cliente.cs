@@ -11,39 +11,22 @@ using System.Threading.Tasks;
 namespace Classes
 {
     public class Cliente
-    {
-        public Cliente(string nome, string telefone, string cpf)
-        {
-          this.Nome = nome;
-          this.Telefone = telefone;
-          this.CPF = cpf;
-        }
-
+    { 
         public Cliente()
         {
+            this.Nome = "danilo";
         }
-
+    
         public string Nome;
         public string Telefone;
         public string CPF;
 
         public void Gravar()
         {
-            var clientes = Cliente.LerClientes();
-            clientes.Add(this);
-            if (File.Exists(caminhoBaseClientes()))
-            {
-                string conteudo = "nome;telefone;cpf;\n";
-
-                foreach (Cliente c in clientes)
-                {
-                    conteudo += c.Nome + ";" + c.Telefone + ";" + c.CPF + ";\n";
-                }
-
-                File.WriteAllText(caminhoBaseClientes(), conteudo);
-            }
+            //gravar
         }
-            private static string caminhoBaseClientes()
+
+        private static string caminhoBaseClientes()
         {
             return ConfigurationManager.AppSettings["BaseDosClientes"];
         }
@@ -51,6 +34,7 @@ namespace Classes
         public static List<Cliente> LerClientes()
         {
             var clientes = new List<Cliente>();
+
             if (File.Exists(caminhoBaseClientes()))
             {
                 using (StreamReader arquivo = File.OpenText(caminhoBaseClientes()))
@@ -60,15 +44,18 @@ namespace Classes
                     while ((linha = arquivo.ReadLine()) != null)
                     {
                         i++;
-                        if (i == 0) continue;
+                        if (i == 1) continue;
                         var clienteArquivo = linha.Split(';');
-
-                        var cliente = new Cliente { Nome = clienteArquivo[0], Telefone = clienteArquivo[1], CPF = clienteArquivo[2] };                   
+                        var cliente = new Cliente { Nome = clienteArquivo[0], Telefone = clienteArquivo[1], CPF = clienteArquivo[2] };
+                       
                         clientes.Add(cliente);
+
                     }
                 }
             }
+
             return clientes;
         }
+       
     }
 }
