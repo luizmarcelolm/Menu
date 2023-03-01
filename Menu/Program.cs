@@ -20,28 +20,20 @@ namespace Console_app
         {
             // Menu.Criar();
 
-             
-             
-             var cliente = new Cliente();
-             cliente.Nome = "mota";
-             cliente.Telefone = "2222255555";
-             cliente.CPF = "22222222";
-             cliente.Gravar();
+                            
+            var cliente = new Cliente();
+            cliente.Nome = "danilo";
+            cliente.Telefone = "2222222";
+            cliente.CPF = "3333333";
+            cliente.Gravar();
 
             var clientes = Cliente.LerClientes();
-            foreach (Cliente c in clientes)
+            foreach (var c in clientes)
             {
                 Console.WriteLine(c.Nome);
-                Console.WriteLine(c.Telefone);
-                Console.WriteLine(c.CPF);
             }
             Console.ReadLine();
-
-            //Cliente c = new Cliente();
-
-            // Cliente c2 = new Cliente { Nome = "danilo", Telefone = "44646460", CPF = "654646646"};
-
-            // var l = new List<String>();
+           
         }
     }
 }
