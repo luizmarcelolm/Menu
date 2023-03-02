@@ -19,8 +19,7 @@ namespace Console_app
         static void Main(string[] args)
         {
             // Menu.Criar();
-
-                            
+              
             var cliente = new Cliente();
             cliente.Nome = "danilo";
             cliente.Telefone = "2222222";
@@ -28,9 +27,11 @@ namespace Console_app
             cliente.Gravar();
 
             var clientes = Cliente.LerClientes();
-            foreach (var c in clientes)
+            foreach (Cliente c in clientes)
             {
                 Console.WriteLine(c.Nome);
+                Console.WriteLine(c.Telefone);
+                Console.WriteLine(c.CPF);
             }
             Console.ReadLine();
            

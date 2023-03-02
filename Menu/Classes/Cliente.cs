@@ -19,27 +19,30 @@ namespace Classes
             this.CPF= cpf;
         }
 
+      
+        public string Nome;
+        public string Telefone;
+        public string CPF;
+
         public Cliente()
         {
         }
 
-        public string Nome;
-        public string Telefone;
-        public string CPF;
- 
         public void Gravar()
         {
             var clientes = Cliente.LerClientes();
             clientes.Add(this);
             if (File.Exists(caminhoBaseClientes()))
             {
-                string conteudo = "nome;telefone;cpf;\n";
+                StreamWriter r = new StreamWriter(caminhoBaseClientes());
+                r.WriteLine("nome;telefone;cpf;");
                 foreach (Cliente c in clientes) 
                 {
-                    conteudo += c.Nome + ";" + c.Telefone + ";" + c.CPF + ";\n";
+                    var linha = c.Nome + ";" + c.Telefone + ";" + c.CPF + ";";
+                    r.WriteLine(linha);
                 }
 
-                File.WriteAllText(caminhoBaseClientes(), conteudo);
+                r.Close();
             }
         }
 
@@ -63,7 +66,7 @@ namespace Classes
                             i++;
                             if (i == 1) continue;
                             var clienteArquivo = linha.Split(';');
-                            var cliente = new Cliente { Nome = clienteArquivo[0], Telefone = clienteArquivo[1], CPF = clienteArquivo[2] };
+                            var cliente = new Cliente( clienteArquivo[0], clienteArquivo[1], clienteArquivo[2]);
 
                             clientes.Add(cliente);
 
