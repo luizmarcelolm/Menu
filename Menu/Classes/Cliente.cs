@@ -59,22 +59,22 @@ namespace Classes
                 {
                     using (StreamReader arquivo = File.OpenText(caminhoBaseClientes()))
                     {
-                        string linha;
-                        int i = 0;
-                        while ((linha = arquivo.ReadLine()) != null)
-                        {
+                       string linha;
+                       int i = 0;
+                       while ((linha = arquivo.ReadLine()) != null) 
+                       {
                             i++;
                             if (i == 1) continue;
-                            var clienteArquivo = linha.Split(';');
-                            var cliente = new Cliente( clienteArquivo[0], clienteArquivo[1], clienteArquivo[2]);
-
-                            clientes.Add(cliente);
-
-                        }
+                            {
+                              var clienteArquivo = linha.Split(';');
+                              var cliente = new Cliente(clienteArquivo[0], clienteArquivo[1], clienteArquivo[2]);
+                              clientes.Add(cliente);
+                            }
+                       }
                     }
                 }
 
-            return clientes;
+              return clientes;
             }
         
     }

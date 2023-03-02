@@ -21,9 +21,9 @@ namespace Console_app
             // Menu.Criar();
               
             var cliente = new Cliente();
-            cliente.Nome = "danilo";
-            cliente.Telefone = "2222222";
-            cliente.CPF = "3333333";
+            cliente.Nome = "guilherme";
+            cliente.Telefone = "555555";
+            cliente.CPF = "666666";
             cliente.Gravar();
 
             var clientes = Cliente.LerClientes();
@@ -32,6 +32,7 @@ namespace Console_app
                 Console.WriteLine(c.Nome);
                 Console.WriteLine(c.Telefone);
                 Console.WriteLine(c.CPF);
+                Console.WriteLine("-------------");
             }
             Console.ReadLine();
            
