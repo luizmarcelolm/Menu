@@ -19,6 +19,11 @@ namespace Classes
             this.CPF= cpf;
         }
 
+        public Cliente (int telefone)
+        {
+            this.Telefone = telefone.ToString();
+        }
+
       
         public string Nome;
         public string Telefone;
@@ -27,7 +32,6 @@ namespace Classes
         public Cliente()
         {
         }
-
         public void Gravar()
         {
             var clientes = Cliente.LerClientes();

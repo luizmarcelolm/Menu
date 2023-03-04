@@ -11,13 +11,14 @@ using Genericas;
 
 namespace Tela
 {
-     class Menu
+    class Menu
     {
         public const int SAIR_PROGRAMA = 0;
         public const int LER_ARQUIVOS = 1;
         public const int TABUADA = 2;
         public const int CALCULO_MEDIA = 3;
-        public static void Criar()
+        public const int CADASTRAR_CLIENTES = 4;
+       public static void Criar()
         {
             while (true)
             {
@@ -26,6 +27,7 @@ namespace Tela
                     "\n 1 - LER ARQUIVOS" +
                     "\n 2 - TABUADA" +
                     "\n 3 - CALCULAR MÉDIA" +
+                    "\n 4 - CADASTRAR CLIENTES" +
                     "\n ----------------------------------";
 
                 Console.WriteLine(mensagem);
@@ -63,6 +65,14 @@ namespace Tela
                     Console.WriteLine(" ");
                     Opcao.Escolha();
                 }
+
+                else if (valor == CADASTRAR_CLIENTES)
+                {
+                    Console.Clear();
+                    TelaCliente.Chamar();
+                    
+                }
+
                 else
                 {
                     Console.WriteLine(" ");

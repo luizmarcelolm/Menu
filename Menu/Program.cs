@@ -15,13 +15,15 @@ using Tela;
 namespace Console_app
 {
     class Program
-    { 
-        static void Main(string[] args)
+    {
+         public static void Main(string[] args)
         {
-            // Menu.Criar();
-              
-            var cliente = new Cliente();
-            cliente.Nome = "guilherme";
+            Menu.Criar();
+        }
+    }
+    /*
+     *  var cliente = new Cliente();
+        cliente.Nome = "marcos";
             cliente.Telefone = "555555";
             cliente.CPF = "666666";
             cliente.Gravar();
@@ -34,8 +36,6 @@ namespace Console_app
                 Console.WriteLine(c.CPF);
                 Console.WriteLine("-------------");
             }
-            Console.ReadLine();
-           
-        }
-    }
+    Console.ReadLine();
+     */
 }

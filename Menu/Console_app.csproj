@@ -48,6 +48,7 @@
     <Compile Include="Diretorio\Arquivo.cs" />
     <Compile Include="Calculo\Media.cs" />
     <Compile Include="Funcoes\Tabuada.cs" />
+    <Compile Include="Funcoes\TelaCliente.cs" />
     <Compile Include="Genericas\Opcao.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
