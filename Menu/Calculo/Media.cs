@@ -10,7 +10,7 @@ namespace Calculo
     {
         public static void Aluno()
         {
-            Console.WriteLine("Digite onome do aluno");
+            Console.WriteLine("Digite o nome do aluno");
             string nome = Console.ReadLine();
             int qtdNotas = 3;
 

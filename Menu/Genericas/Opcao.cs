@@ -15,14 +15,14 @@ namespace Genericas
         public static void Escolha()
         {
             Console.WriteLine("Digite (1) para voltar ao menu.");
-            Console.WriteLine("Digite qualquer outra tecla para sair.");
+            Console.WriteLine("Digite (2) para sair.");
             var opcao = int.Parse(Console.ReadLine());
             if (opcao == 1)
             {
                 Console.Clear();
                 Menu.Criar();
             }
-            else
+            else if (opcao == 2)
             {
                 Environment.Exit(1);
             }
